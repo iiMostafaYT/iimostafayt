@@ -308,7 +308,7 @@ client.on("guildMemberAdd", (member) => {
             if (dat[Inv])
                 if (dat[Inv] < Invite.uses) {
                     console.log(3);
- channel.send(`**Welcome To Server iiMostafaYT Legends** 🎶 n/ ${member} Invites By ${Invite.inviter}`)
+ channel.send(`**Welcome To Server iiMostafaYT Legends** 🎶 \n ${member} Invites By ${Invite.inviter}`)
  }
             dat[Inv] = Invite.uses;
         })
@@ -579,4 +579,15 @@ client.on('message', async message => {
           }
       });
      
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "• Legends");
+   member.addRole (role);
+  
+})
+
+client.on ("guildMemberRemove", member => {
+   
+})
+
 client.login(process.env.BOT_TOKEN);
